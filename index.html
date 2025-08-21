@@ -19,9 +19,12 @@
 
     <!-- My Style -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- n8n Chat Styles (match Demo di Web Patuh PDP) -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
   </head>
 
   <body>
+    
     <!-- Navbar start -->
     <nav class="navbar">
       <a href="#" class="navbar-logo">Berkah Samudera<span> Group</span></a>
@@ -30,21 +33,17 @@
         <a href="#home">Home</a>
         <a href="#about">Cuci Kendaraan</a>
         <a href="#menu">Bengkel Kaki Mobil</a>
-        <a href="#products">Layanan Tambahan</a>
+        <a href="#rumahmakan">Rumah Makan</a>
+        <a href="#kost">Kost</a>
         <a href="#contact">Fasilitas</a>
       </div>
 
-      <div class="navbar-extra">
-        <a href="#" id="search-button"><i data-feather="search"></i></a>
+      <!-- <div class="navbar-extra">
+        <a href="https://wa.me/6289512980425" class="navbar-wa" aria-label="WhatsApp">
+          <i data-feather="phone"></i>
+        </a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
-      </div>
-
-      <!-- Search Form start -->
-      <div class="search-form">
-        <input type="search" id="search-box" placeholder="search here..." />
-        <label for="search-box"><i data-feather="search"></i></label>
-      </div>
-      <!-- Search Form end -->
+      </div> -->
     </nav>
     <!-- Navbar end -->
 
@@ -52,9 +51,9 @@
     <section class="hero" id="home">
       <!-- <div class="mask-container"> -->
       <main class="content">
-        <h1>Rawat Kendaraan Anda Bersama Kami</h1>
-        <p>Melayani Jasa Cuci Kendaraan & Bengkel Kaki Mobil</p>
-        <q
+        <h1 class="highlight highlight-blue">Rawat Kendaraan Anda Bersama Kami</h1>
+        <p class="highlight highlight-blue">Melayani Jasa Cuci Kendaraan & Bengkel Kaki Mobil</p>
+        <q class="highlight highlight-blue"
           >Visi & Misi kami adalah Menyediakan pelayanan terbaik bagi pelanggan
           sambil memberdayakan karyawan untuk mencapai kesejahteraan dan
           kemajuan bersama</q
@@ -64,6 +63,7 @@
     </section>
     <!-- Hero Section end -->
 
+    <div class="section-divider"></div>
     <!-- About Section start -->
     <section id="about" class="about">
       <h2><span>Layanan</span> Cuci Kendaraan</h2>
@@ -77,11 +77,13 @@
           <img src="img/menu/Motor.png" alt="Espresso" class="menu-card-img" />
           <h3 class="menu-card-title">- Cuci Motor -</h3>
           <p class="menu-card-price">Mulai dari 12K</p>
+          <p class="menu-card-desc">Pencucian menyeluruh dengan shampo khusus, detailing ringan, dan semir ban.</p>
         </div>
         <div class="menu-card">
           <img src="img/menu/Mobil.png" alt="Espresso" class="menu-card-img" />
           <h3 class="menu-card-title">- Cuci Mobil -</h3>
           <p class="menu-card-price">Mulai dari 35K</p>
+          <p class="menu-card-desc">Cuci eksterior, pembersihan interior cepat, pengeringan optimal tanpa water spot.</p>
         </div>
         <div class="menu-card">
           <img
@@ -91,14 +93,17 @@
           />
           <h3 class="menu-card-title">- Doorsmeer -</h3>
           <p class="menu-card-price">Mulai dari 15K</p>
+          <p class="menu-card-desc">Semprot tekanan tinggi untuk kolong dan area sulit, mengangkat kotoran membandel.</p>
         </div>
       </div>
 
-      <a href="https://wa.me/6281326523184" class="cta">Pesan Sekarang</a>
+      <p><strong>Kontak:</strong> 0813-2652-3184</p>
+      <a href="https://wa.me/6281326523184" class="cta">Chat/Booking via WhatsApp</a>
       <b>Jam Operasional: 08.00 - 16.00 (setiap hari)</b>
     </section>
     <!-- About Section end -->
 
+    <div class="section-divider"></div>
     <!-- Menu Section start -->
     <section id="menu" class="menu">
       <h2><span>Layanan</span> Bengkel Kaki Mobil</h2>
@@ -114,6 +119,8 @@
             alt="Espresso"
             class="menu-card-img"
           />
+          <h4 class="menu-card-title">Pemeriksaan Kaki-Kaki</h4>
+          <p class="menu-card-desc">Cek tie rod, ball joint, rack end, dan shock untuk kenyamanan dan keamanan.</p>
         </div>
         <div class="menu-card">
           <img
@@ -121,6 +128,8 @@
             alt="Espresso"
             class="menu-card-img"
           />
+          <h4 class="menu-card-title">Perbaikan & Penggantian</h4>
+          <p class="menu-card-desc">Perbaikan komponen aus/longgar dengan suku cadang yang sesuai.</p>
         </div>
         <div class="menu-card">
           <img
@@ -128,22 +137,25 @@
             alt="Espresso"
             class="menu-card-img"
           />
+          <h4 class="menu-card-title">Setel & Uji Jalan</h4>
+          <p class="menu-card-desc">Penyetelan akhir dan uji jalan untuk memastikan hasil optimal.</p>
         </div>
       </div>
-
-      <a href="https://wa.me/62895422721519" class="cta">Pesan Sekarang</a>
+      <p><strong>Kontak:</strong> 0895-4227-21519</p>
+      <a href="https://wa.me/62895422721519" class="cta">Konsultasi via WhatsApp</a>
       <b>Jam Operasional: 08.00 - 16.00 (senin-sabtu)</b>
     </section>
     <!-- Menu Section end -->
 
+    <div class="section-divider"></div>
     <!-- Products Section start -->
-    <section id="products" class="products">
-      <h2>Layanan Tambahan</h2>
-      <h3>Warung / Rumah Makan</h3>
+    <section id="rumahmakan" class="products">
+      <h2>Rumah Makan</h2>
       <p>
-        Menyediakan berbagai jenis makanan dan minuman untuk menemani sembari
-        menunggu layanan utama kami selesai
+        Menyediakan berbagai pilihan makanan dan minuman dengan harga terjangkau
+        untuk menemani waktu Anda menunggu layanan utama kami.
       </p>
+      
 
       <div class="row">
         <div class="menu-card">
@@ -171,8 +183,36 @@
           <h4 class="menu-card-title">- Aneka Jajanan -</h4>
         </div>
       </div>
+      <a href="https://wa.me/6289512980425" class="cta">Pesan/HUBUNGI via WhatsApp</a>
     </section>
     <!-- Products Section end -->
+
+    <div class="section-divider"></div>
+    <!-- Kost Section start -->
+    <section id="kost" class="service">
+      <h2>Kost Harian/Bulanan/Tahunan <span>(Coming Soon)</span></h2>
+      <p>
+        Penginapan nyaman dengan opsi durasi fleksibel sesuai kebutuhan Anda. Kami akan segera meluncurkan layanan ini.
+      </p>
+      <ul class="features">
+        <li>AC hemat energi</li>
+        <li>Kamar mandi dalam</li>
+        <li>Wi‑Fi cepat dan stabil</li>
+        <li>Parkir motor/mobil</li>
+        <li>Keamanan 24 jam</li>
+      </ul>
+      
+      <a href="https://wa.me/6289512980425" class="cta">Daftar Minat via WhatsApp</a>
+    </section>
+    <!-- Kost Section end -->
+
+    <div class="section-divider"></div>
+    <!-- Global Note & Payments start -->
+    <section class="notice">
+      <p><em>Untuk respon cepat, gunakan chatbot kami. Chat dengan pegawai mungkin tidak fast respon.</em></p>
+      <p class="payments-info">Menerima pembayaran <strong>QRIS</strong> & <strong>Cashless Payment</strong>.</p>
+    </section>
+    <!-- Global Note & Payments end -->
 
     <!-- Contact Section start -->
     <section id="contact" class="contact">
@@ -227,16 +267,9 @@
 
     <!-- Footer start -->
     <footer>
-      <div class="contactus">
-        <a>Contact Us</a>
-      </div>
-      <div class="socials">
-        <a href="https://wa.me/6289670935019"><i data-feather="phone"></i></a>
-        <a href="mailto:ulworld5mail@gmail.com"><i data-feather="mail"></i></a>
-      </div>
 
       <div class="credit">
-        <p>Copyright &copy; 2024 <a href="#"> Berkah Samudera Group</a></p>
+        <p>Copyright &copy; 2025 <a href="#"> Berkah Samudera Group</a></p>
       </div>
     </footer>
     <!-- Footer end -->
@@ -248,5 +281,47 @@
 
     <!-- My Javascript -->
     <script src="js/script.js"></script>
+
+    <!-- n8n Chat Container -->
+    <div id="n8n-chat-widget"></div>
+    <!-- n8n Chat Script (match Demo di Web Patuh PDP) -->
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+      createChat({
+        webhookUrl: 'https://n8n-xjrdisltisbw.ceri.sumopod.my.id/webhook/64d18ea0-b41d-4dd9-9c01-a3184e66ed5a/chat',
+        target: '#n8n-chat-widget',
+        mode: 'window',
+        loadPreviousSession: true,
+        defaultLanguage: 'id',
+        initialMessages: [
+          'Halo 👋',
+          'Saya Chatbot Customer Service Berkah Samudera siap membantu Anda.'
+        ],
+        i18n: {
+          id: {
+            title: 'CS AI Berkah Samudera',
+            subtitle: 'Chatbot berbasis AI yang siap membantu Anda 24/7',
+            getStarted: 'Mulai Chat Baru',
+            inputPlaceholder: 'Ketik pertanyaan Anda...',
+          },
+        },
+        enableStreaming: false,
+        showWelcomeScreen: true,
+        theme: {
+          primaryColor: '#0a66c2',        // Biru utama (mirip LinkedIn blue)
+          secondaryColor: '#1277d1',      // Biru sekunder sedikit lebih cerah
+          backgroundColor: '#ffffff',     // Putih
+          textColor: '#101330',           // Biru tua hampir hitam untuk teks
+          borderColor: '#e9ecef',         // Abu terang
+          borderRadius: '12px',           // Sudut membulat
+          shadow: '0 8px 32px rgba(0, 0, 0, 0.15)', // Bayangan lembut
+          userMessageColor: '#1277d1',    // Pesan user → biru sekunder
+          botMessageColor: '#ffffff',     // Pesan bot → putih
+          sendButtonColor: '#0a66c2',     // Tombol kirim → biru utama
+          sendButtonHoverColor: '#1277d1' // Hover tombol → biru sekunder
+        }
+      });
+    </script>
   </body>
 </html>
