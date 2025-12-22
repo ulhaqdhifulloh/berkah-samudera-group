@@ -74,7 +74,7 @@ if (hamburgerMenu) {
   hamburgerMenu.addEventListener('click', (e) => {
     e.preventDefault();
     navbarNav.classList.toggle('active');
-    hamburgerMenu.querySelector('i').setAttribute('data-feather', 
+    hamburgerMenu.querySelector('i').setAttribute('data-feather',
       navbarNav.classList.contains('active') ? 'x' : 'menu'
     );
     feather.replace();
@@ -112,14 +112,14 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
-  
+
   // Add scrolled class for navbar styling
   if (currentScroll > 50) {
     navbar.classList.add('scrolled');
   } else {
     navbar.classList.remove('scrolled');
   }
-  
+
   lastScroll = currentScroll;
 });
 
@@ -157,9 +157,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize FAQ Questions
 function initFAQQuestions() {
   if (!faqQuestionsContainer) return;
-  
+
   faqQuestionsContainer.innerHTML = '';
-  
+
   faqData.forEach(item => {
     const btn = document.createElement('button');
     btn.className = 'faq-question-btn';
@@ -174,14 +174,14 @@ function initFAQQuestions() {
 function handleFAQQuestion(item) {
   // Add user message
   addMessage(item.question, 'user');
-  
+
   // Hide questions temporarily
   faqQuestionsContainer.style.display = 'none';
-  
+
   // Add bot response after a small delay
   setTimeout(() => {
     addMessage(item.answer, 'bot');
-    
+
     // Add back button
     addBackButton();
   }, 500);
@@ -193,7 +193,7 @@ function addMessage(text, type) {
   messageDiv.className = `faq-message ${type}`;
   messageDiv.innerHTML = text.replace(/\n/g, '<br>');
   faqMessagesContainer.appendChild(messageDiv);
-  
+
   // Scroll to bottom
   const chatBody = document.getElementById('faq-chat-body');
   chatBody.scrollTop = chatBody.scrollHeight;
@@ -203,17 +203,18 @@ function addMessage(text, type) {
 function addBackButton() {
   // Check if back button already exists
   if (document.querySelector('.faq-back-btn')) return;
-  
+
   const backBtn = document.createElement('button');
   backBtn.className = 'faq-back-btn';
   backBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg> Pertanyaan Lain';
-  backBtn.addEventListener('click', () => {
+  backBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent closing the chat window
     // Show questions again
     faqQuestionsContainer.style.display = 'flex';
     backBtn.remove();
   });
   faqMessagesContainer.appendChild(backBtn);
-  
+
   // Scroll to bottom
   const chatBody = document.getElementById('faq-chat-body');
   chatBody.scrollTop = chatBody.scrollHeight;
@@ -224,7 +225,7 @@ if (faqChatToggle && faqChatWindow) {
   faqChatToggle.addEventListener('click', () => {
     faqChatWindow.classList.toggle('active');
     faqChatToggle.classList.toggle('active');
-    
+
     // Initialize questions on first open
     if (faqChatWindow.classList.contains('active') && faqQuestionsContainer.children.length === 0) {
       initFAQQuestions();
@@ -247,16 +248,16 @@ document.addEventListener('click', (e) => {
 // Smooth Scroll for Internal Links
 // ===================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
     if (href === '#') return;
-    
+
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
       const navHeight = navbar ? navbar.offsetHeight : 0;
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-      
+
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
@@ -272,12 +273,12 @@ const sections = document.querySelectorAll('section[id]');
 
 function highlightNavLink() {
   const scrollY = window.pageYOffset;
-  
+
   sections.forEach(section => {
     const sectionHeight = section.offsetHeight;
     const sectionTop = section.offsetTop - 100;
     const sectionId = section.getAttribute('id');
-    
+
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document.querySelectorAll('.navbar-nav a').forEach(link => {
         link.classList.remove('active');
@@ -299,10 +300,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof feather !== 'undefined') {
     feather.replace();
   }
-  
+
   // Initialize FAQ
   initFAQQuestions();
-  
+
   // Trigger scroll animations for elements in viewport on load
   setTimeout(() => {
     const event = new Event('scroll');
