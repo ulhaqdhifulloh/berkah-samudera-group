@@ -47,6 +47,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: clamp(15px, 1.2vw + 8px, 18px);
 }
 
 body {
@@ -58,11 +59,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-}
-
-/* Responsive base font sizing */
-html {
-  font-size: clamp(15px, 1.2vw + 8px, 18px);
 }
 
 body,
@@ -261,6 +257,17 @@ body::before {
   transform: scale(1.02);
 }
 
+.navbar .navbar-logo-img {
+  height: clamp(38px, 4.5vw, 50px);
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.navbar .navbar-logo:hover .navbar-logo-img {
+  transform: rotate(-5deg) scale(1.05);
+}
+
 .navbar .navbar-logo span {
   color: rgba(255, 255, 255, 0.85);
   font-weight: 400;
@@ -284,7 +291,7 @@ body::before {
 
 .navbar .navbar-nav a:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.20);
 }
 
 .navbar .navbar-nav a::after {
@@ -404,7 +411,7 @@ body::before {
   font-style: italic;
   padding: 1rem 1.5rem;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border-left: 4px solid var(--accent-gold);
 }
