@@ -43,7 +43,7 @@ const faqData = [
   {
     id: 6,
     question: "Di mana lokasi Berkah Samudera?",
-    answer: "Kami berlokasi di Purwokerto. Lihat peta lokasi lengkap di bagian Fasilitas website kami atau klik link Google Maps yang tersedia."
+    answer: "Kami berlokasi di Purwokerto / Banyumas. Lihat peta lokasi lengkap di bagian Fasilitas website kami atau klik link Google Maps yang tersedia."
   },
   {
     id: 7,
@@ -62,8 +62,23 @@ const faqData = [
   },
   {
     id: 10,
+    question: "Berapa harga & fasilitas Kost?",
+    answer: "Lantai 2 (Tersedia, Khusus Pria):\n• Harga: Rp 800.000 / Bulan\n• Ukuran Kamar: 3 x 6 meter\n• Fasilitas: Kamar mandi dalam, lemari, bed (kasur), meja & kursi (1 set), Wi-Fi, kipas angin, dapur pribadi (opsional).\n\nLantai 1:\n• Coming Soon (segera hadir)."
+  },
+  {
+    id: 11,
+    question: "Kost diperuntukkan bagi siapa?",
+    answer: "Kost Berkah Samudera Banyumas saat ini dikhususkan untuk penyewa Pria (Khusus Pria)."
+  },
+  {
+    id: 12,
+    question: "Kontak & Alamat Kost?",
+    answer: "Hubungi Pengelola Kost:\n📱 WhatsApp: +62 895-1298-0425\n🌐 Website: www.berkahsamuderabanyumas.my.id\n\nAlamat Kost:\n📍 Sawah, Kejawar, Banyumas (Pinggir Sawah, Jl. Raya Banyumas-Banjarnegara, RT.1/RW.1)."
+  },
+  {
+    id: 13,
     question: "Hubungi CS langsung",
-    answer: "Silakan hubungi Customer Service kami:\n\n📱 Cuci Kendaraan: 0813-2652-3184\n📱 Bengkel Kaki Mobil: 0895-4227-21519\n📱 Umum: 0895-1298-0425\n\nAtau klik tombol WhatsApp di website untuk chat langsung!"
+    answer: "Silakan hubungi Customer Service kami:\n\n📱 Cuci Kendaraan: 0813-2652-3184\n📱 Bengkel Kaki Mobil: 0895-4227-21519\n📱 Umum & Kost: 0895-1298-0425\n\nAtau klik tombol WhatsApp di website untuk chat langsung!"
   }
 ];
 
@@ -74,9 +89,7 @@ if (hamburgerMenu) {
   hamburgerMenu.addEventListener('click', (e) => {
     e.preventDefault();
     navbarNav.classList.toggle('active');
-    hamburgerMenu.querySelector('i').setAttribute('data-feather',
-      navbarNav.classList.contains('active') ? 'x' : 'menu'
-    );
+    hamburgerMenu.querySelector('i').dataset.feather = navbarNav.classList.contains('active') ? 'x' : 'menu';
     feather.replace();
   });
 }
@@ -86,7 +99,7 @@ document.addEventListener('click', (e) => {
   if (hamburgerMenu && navbarNav) {
     if (!hamburgerMenu.contains(e.target) && !navbarNav.contains(e.target)) {
       navbarNav.classList.remove('active');
-      hamburgerMenu.querySelector('i').setAttribute('data-feather', 'menu');
+      hamburgerMenu.querySelector('i').dataset.feather = 'menu';
       feather.replace();
     }
   }
@@ -98,7 +111,7 @@ if (navbarNav) {
     link.addEventListener('click', () => {
       navbarNav.classList.remove('active');
       if (hamburgerMenu) {
-        hamburgerMenu.querySelector('i').setAttribute('data-feather', 'menu');
+        hamburgerMenu.querySelector('i').dataset.feather = 'menu';
         feather.replace();
       }
     });
@@ -191,7 +204,7 @@ function handleFAQQuestion(item) {
 function addMessage(text, type) {
   const messageDiv = document.createElement('div');
   messageDiv.className = `faq-message ${type}`;
-  messageDiv.innerHTML = text.replace(/\n/g, '<br>');
+  messageDiv.innerHTML = text.replaceAll('\n', '<br>');
   faqMessagesContainer.appendChild(messageDiv);
 
   // Scroll to bottom
@@ -307,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Trigger scroll animations for elements in viewport on load
   setTimeout(() => {
     const event = new Event('scroll');
-    window.dispatchEvent(event);
+    globalThis.dispatchEvent(event);
   }, 100);
 });
 
