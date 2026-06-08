@@ -307,8 +307,9 @@ body::before {
   transform: translateX(-50%);
 }
 
-.navbar .navbar-nav a:hover::after {
-  width: 80%;
+.sidebar-header,
+.sidebar-divider {
+  display: none;
 }
 
 .navbar .navbar-extra {
@@ -1412,14 +1413,16 @@ footer .credit a:hover {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 200px;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(10, 102, 194, 0.98);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
     flex-direction: column;
-    padding: 5rem 2rem 2rem;
+    padding: 2rem 0.75rem 2rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.2);
     z-index: 9998;
   }
 
@@ -1427,18 +1430,56 @@ footer .credit a:hover {
     right: 0;
   }
 
-  .navbar .navbar-nav a {
-    color: var(--secondary);
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem 1rem;
+  }
+
+  .sidebar-logo {
     display: block;
-    margin: 0.5rem 0;
-    padding: 1rem;
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    order: 2; /* Put logo on the right */
+  }
+
+  .sidebar-header h3 {
     font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-align: right;
+    order: 1; /* Put text on the left */
+  }
+
+  .sidebar-divider {
+    display: block;
+    height: 1px;
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.2), transparent);
+    margin: 0.5rem 0.5rem 1.5rem;
+  }
+
+  .navbar .navbar-nav a {
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    margin: 0.3rem 0;
+    padding: 0.8rem 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    text-align: right;
     border-radius: var(--radius-md);
+    border-right: 3px solid transparent;
+    transition: all 0.3s ease;
   }
 
   .navbar .navbar-nav a:hover {
-    background: rgba(10, 102, 194, 0.1);
-    color: var(--main-700);
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-right-color: var(--accent-gold);
+    padding-right: 1.1rem;
   }
 
   .navbar .navbar-nav a::after {
