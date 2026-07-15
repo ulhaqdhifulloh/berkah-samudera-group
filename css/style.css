@@ -1157,7 +1157,7 @@ body::before {
 .contact .rowe {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2rem;
   margin-top: 2rem;
   justify-content: center;
   align-items: stretch;
@@ -1176,12 +1176,10 @@ body::before {
   align-items: center;
 }
 
-.contact .rowe .qris-card {
-  max-width: 580px;
-}
-
+.contact .rowe .qris-card,
 .contact .rowe .pricelist-card {
-  max-width: 580px;
+  flex: 1 1 45%;
+  max-width: 530px;
 }
 
 .contact .rowe .about-img:hover {
