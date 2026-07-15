@@ -53,7 +53,6 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  background-attachment: fixed;
   color: #0e2240;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -1628,6 +1627,11 @@ footer .credit a:hover {
   .hero {
     background-attachment: scroll;
     min-height: 90vh;
+  }
+
+  /* Fix: body::before position:fixed causes flicker on iOS/mobile browsers */
+  body::before {
+    position: absolute;
   }
 
   .hero .content {
