@@ -1157,16 +1157,16 @@ body::before {
 .contact .rowe {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
   margin-top: 2rem;
   justify-content: center;
   align-items: stretch;
+  width: 100%;
 }
 
 .contact .rowe .about-img {
   width: 100%;
-  max-width: 350px;
-  padding: 1.5rem;
+  padding: 2rem;
   background: white;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
@@ -1176,24 +1176,41 @@ body::before {
   align-items: center;
 }
 
+.contact .rowe .qris-card {
+  max-width: 400px;
+}
+
+.contact .rowe .pricelist-card {
+  max-width: 750px;
+}
+
 .contact .rowe .about-img:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
 .contact .rowe .about-img p {
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #1e293b;
+  margin-bottom: 1rem;
 }
 
 .contact .rowe .about-img img {
   width: 100%;
-  height: 250px;
   object-fit: contain;
   border-radius: var(--radius-md);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   background: #f8fafc;
   padding: 0.5rem;
+}
+
+.contact .rowe .qris-card img {
+  height: 350px;
+}
+
+.contact .rowe .pricelist-card img {
+  height: 520px;
 }
 
 /* Download Button style */
@@ -1700,6 +1717,17 @@ footer .credit a:hover {
     width: calc(100vw - 40px);
     max-width: 380px;
     right: -10px;
+  }
+
+  .contact .rowe .qris-card,
+  .contact .rowe .pricelist-card {
+    max-width: 100%;
+  }
+
+  .contact .rowe .qris-card img,
+  .contact .rowe .pricelist-card img {
+    height: auto;
+    max-height: 400px;
   }
 }
 
