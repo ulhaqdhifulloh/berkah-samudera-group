@@ -1716,6 +1716,7 @@ footer .credit a:hover {
 
   .contact .rowe .qris-card,
   .contact .rowe .pricelist-card {
+    flex: 1 1 100%;
     max-width: 100%;
   }
 
