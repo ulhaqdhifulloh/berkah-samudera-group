@@ -294,6 +294,12 @@ body::before {
   background: rgba(0, 0, 0, 0.20);
 }
 
+.navbar .navbar-nav a.active {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 2px solid var(--accent-gold);
+}
+
 .navbar .navbar-nav a::after {
   content: "";
   display: block;
@@ -415,6 +421,22 @@ body::before {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   border-left: 4px solid var(--accent-gold);
+}
+
+/* Hero Logo */
+.hero-logo {
+  margin-bottom: 1.5rem;
+}
+
+.hero-logo img {
+  height: clamp(80px, 10vw, 120px);
+  width: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4)) brightness(1.05);
+  transition: transform 0.3s ease;
+}
+
+.hero-logo img:hover {
+  transform: scale(1.05);
 }
 
 /* Enhanced highlight badges */
@@ -639,6 +661,18 @@ body::before {
   font-size: clamp(2rem, 2vw + 1.2rem, 3rem);
   color: var(--main-700);
   margin-bottom: 0.5rem;
+  display: inline-block;
+  position: relative;
+}
+
+.kost-section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--main-700), var(--accent-gold));
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
 }
 
 .kost-section h2 span {
@@ -1147,9 +1181,9 @@ body::before {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, rgba(10, 102, 194, 0.95), rgba(0, 82, 155, 0.95));
+  background: linear-gradient(135deg, #0e2240 0%, #00529b 100%);
   text-align: center;
-  padding: 2.5rem 7% 3.5rem;
+  padding: 3rem 7% 1.5rem;
   margin-top: 3rem;
   position: relative;
   overflow: hidden;
@@ -1165,14 +1199,104 @@ footer::before {
   background: linear-gradient(90deg, var(--accent-gold), #fbbf24, var(--accent-gold));
 }
 
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  text-align: left;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.footer-logo {
+  height: clamp(48px, 5vw, 64px);
+  width: auto;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  opacity: 0.92;
+}
+
+.footer-name {
+  font-size: clamp(1rem, 0.9rem + 0.3vw, 1.15rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.2rem;
+}
+
+.footer-tagline {
+  font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.88rem);
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.footer-links a:hover {
+  color: var(--accent-gold);
+}
+
+.footer-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  background: #25d366;
+  color: #ffffff !important;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.footer-wa-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+.footer-wa-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-divider {
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
 footer .credit {
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 footer .credit a {
-  color: #ffffff;
-  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1403,6 +1527,21 @@ footer .credit a:hover {
 @media (max-width: 768px) {
   html {
     font-size: 62.5%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
   }
 
   #hamburger-menu {
