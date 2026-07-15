@@ -118,6 +118,19 @@ if (navbarNav) {
   });
 }
 
+// Close menu with explicit close button inside sidebar
+const closeSidebarBtn = document.getElementById('close-sidebar');
+if (closeSidebarBtn) {
+  closeSidebarBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    navbarNav.classList.remove('active');
+    if (hamburgerMenu) {
+      hamburgerMenu.querySelector('i').dataset.feather = 'menu';
+      feather.replace();
+    }
+  });
+}
+
 // ===================================
 // Navbar Scroll Effect
 // ===================================

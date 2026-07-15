@@ -1634,6 +1634,28 @@ footer .credit a:hover {
     padding: 0.5rem 0.5rem 1rem;
   }
 
+  .close-sidebar {
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    margin-right: auto;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+  }
+
+  .close-sidebar:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .close-sidebar svg {
+    width: 24px;
+    height: 24px;
+  }
+
   .sidebar-logo {
     display: block;
     height: 32px;
